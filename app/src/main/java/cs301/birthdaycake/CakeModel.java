@@ -2,8 +2,8 @@ package cs301.birthdaycake;
 
 public class CakeModel {
 
-	boolean areCandlesLit;
-	int amountOfCandles;
-	boolean hasFrosting;
-	boolean hasCandles;
+	boolean areCandlesLit = true;
+	int amountOfCandles = 2;
+	boolean hasFrosting = true;
+	boolean hasCandles = true;
 }
