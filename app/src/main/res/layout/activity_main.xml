@@ -51,7 +51,7 @@
             android:padding="16dp">
 
             <TextView
-                android:id="@+id/CandleNum"
+                android:id="@+id/candleNum"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:text="How many candles?" />
@@ -74,14 +74,14 @@
             android:padding="16dp">
 
             <Switch
-                android:id="@+id/Frosting"
+                android:id="@+id/frosting"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:checked="true"
                 android:text="Frosting" />
 
             <Switch
-                android:id="@+id/Candles"
+                android:id="@+id/candles"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:checked="true"
@@ -98,13 +98,13 @@
             android:padding="16dp">
 
             <Button
-                android:id="@+id/BlowOut"
+                android:id="@+id/blowOut"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="BLOWOUT" />
 
             <Button
-                android:id="@+id/Goodbye"
+                android:id="@+id/goodbye"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:onClick="goodbye"
