@@ -6,4 +6,9 @@ public class CakeModel {
 	int amountOfCandles = 2;
 	boolean hasFrosting = true;
 	boolean hasCandles = true;
+
+	float left_touch;
+	float right_touch;
+	float top_touch;
+	float bottom_touch;
 }

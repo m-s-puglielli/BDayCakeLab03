@@ -5,7 +5,9 @@ import android.graphics.Canvas;
 import android.graphics.Color;
 import android.graphics.Paint;
 import android.util.AttributeSet;
+import android.view.MotionEvent;
 import android.view.SurfaceView;
+import android.view.View;
 
 public class CakeView extends SurfaceView {
 
@@ -16,6 +18,7 @@ public class CakeView extends SurfaceView {
     Paint outerFlamePaint = new Paint();
     Paint innerFlamePaint = new Paint();
     Paint wickPaint = new Paint();
+    Paint baloon_paint = new Paint();
 
     private CakeModel model = new CakeModel();
 
@@ -39,7 +42,7 @@ public class CakeView extends SurfaceView {
 
 
     /**
-     * ctor must be overridden here as per standard Java inheritance practice.  We need it
+     * constructor must be overridden here as per standard Java inheritance practice.  We need it
      * anyway to initialize the member variables
      */
     public CakeView(Context context, AttributeSet attrs) {
@@ -61,6 +64,8 @@ public class CakeView extends SurfaceView {
         innerFlamePaint.setStyle(Paint.Style.FILL);
         wickPaint.setColor(Color.BLACK);
         wickPaint.setStyle(Paint.Style.FILL);
+
+        baloon_paint.setColor(Color.BLUE);
 
         setBackgroundColor(Color.WHITE);  //better than black default
 
@@ -92,6 +97,8 @@ public class CakeView extends SurfaceView {
             canvas.drawRect(wickLeft, wickTop, wickLeft + wickWidth, wickTop + wickHeight, wickPaint);
         }
     }
+
+    public void drawBaloon(Canvas c) { c.drawOval(model.left_touch, model.top_touch, model.right_touch, model.bottom_touch, baloon_paint); }
 
     /**
      * onDraw is like "paint" in a regular Java program.  While a Canvas is
@@ -134,6 +141,8 @@ public class CakeView extends SurfaceView {
             drawCandle(canvas, (candleSpaceLocal - (candleWidth / 2)), cakeTop);
             candleSpaceLocal += (int)(cakeWidth / 5);
         }
+
+        drawBaloon(canvas);
 
     }//onDraw
 
