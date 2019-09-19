@@ -5,9 +5,7 @@ import android.graphics.Canvas;
 import android.graphics.Color;
 import android.graphics.Paint;
 import android.util.AttributeSet;
-import android.view.MotionEvent;
 import android.view.SurfaceView;
-import android.view.View;
 
 public class CakeView extends SurfaceView {
 
@@ -19,6 +17,7 @@ public class CakeView extends SurfaceView {
     Paint innerFlamePaint = new Paint();
     Paint wickPaint = new Paint();
     Paint baloon_paint = new Paint();
+    Paint textPaint = new Paint();
 
     private CakeModel model = new CakeModel();
 
@@ -64,6 +63,9 @@ public class CakeView extends SurfaceView {
         innerFlamePaint.setStyle(Paint.Style.FILL);
         wickPaint.setColor(Color.BLACK);
         wickPaint.setStyle(Paint.Style.FILL);
+        textPaint.setColor(Color.RED);
+        textPaint.setTextSize(40);
+
 
         baloon_paint.setColor(Color.BLUE);
 
@@ -141,6 +143,7 @@ public class CakeView extends SurfaceView {
             drawCandle(canvas, (candleSpaceLocal - (candleWidth / 2)), cakeTop);
             candleSpaceLocal += (int)(cakeWidth / 5);
         }
+        canvas.drawText("Touch location: " + model.cx + ", " + model.cy, 150, 690, textPaint);
 
         drawBaloon(canvas);
 

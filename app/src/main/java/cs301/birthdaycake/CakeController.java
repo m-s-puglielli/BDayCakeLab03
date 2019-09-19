@@ -6,7 +6,7 @@ import android.view.View;
 import android.widget.CompoundButton;
 import android.widget.SeekBar;
 
-public class CakeController implements View.OnClickListener, CompoundButton.OnCheckedChangeListener, SeekBar.OnSeekBarChangeListener, View.OnTouchListener{
+public class CakeController implements View.OnClickListener, CompoundButton.OnCheckedChangeListener, SeekBar.OnSeekBarChangeListener, View.OnTouchListener {
 
 	private CakeView view;
 	private CakeModel model;
@@ -53,14 +53,17 @@ public class CakeController implements View.OnClickListener, CompoundButton.OnCh
 	}
 
 	@Override
-	public boolean onTouch(View v, MotionEvent me)
-	{
-		model.left_touch = me.getX();
-		model.right_touch = model.left_touch + 200;
-		model.top_touch = me.getY();
-		model.bottom_touch = model.top_touch + 300;
+	public boolean onTouch(View v, MotionEvent me) {
+		model.cx = (int) me.getX();
+		model.cy = (int) me.getY();
+
+        model.left_touch = me.getX();
+        model.right_touch = model.left_touch + 200;
+        model.top_touch = me.getY();
+        model.bottom_touch = model.top_touch + 300;
+
 		view.invalidate();
 
-		return(true);
+		return true;
 	}
 }
