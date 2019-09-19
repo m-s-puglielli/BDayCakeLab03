@@ -6,4 +6,6 @@ public class CakeModel {
 	int amountOfCandles = 2;
 	boolean hasFrosting = true;
 	boolean hasCandles = true;
+	int cx;
+	int cy;
 }

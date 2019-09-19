@@ -16,6 +16,7 @@ public class CakeView extends SurfaceView {
     Paint outerFlamePaint = new Paint();
     Paint innerFlamePaint = new Paint();
     Paint wickPaint = new Paint();
+    Paint textPaint = new Paint();
 
     private CakeModel model = new CakeModel();
 
@@ -61,6 +62,9 @@ public class CakeView extends SurfaceView {
         innerFlamePaint.setStyle(Paint.Style.FILL);
         wickPaint.setColor(Color.BLACK);
         wickPaint.setStyle(Paint.Style.FILL);
+        textPaint.setColor(Color.RED);
+        textPaint.setTextSize(40);
+
 
         setBackgroundColor(Color.WHITE);  //better than black default
 
@@ -134,6 +138,7 @@ public class CakeView extends SurfaceView {
             drawCandle(canvas, (candleSpaceLocal - (candleWidth / 2)), cakeTop);
             candleSpaceLocal += (int)(cakeWidth / 5);
         }
+        canvas.drawText("Touch location: " + model.cx + ", " + model.cy, 150, 690, textPaint);
 
     }//onDraw
 
